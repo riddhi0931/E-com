@@ -13,6 +13,7 @@ const GlobalProvider = ({ children }) => {
     function apiCall() {
         const response = fetch("https://api.pujakaitem.com/api/products")
         const format = response.json()
+        console.log(format);
     }
 
     return <GlobalData.Provider value={{ myName: "meeru" }}>
