@@ -1,12 +1,20 @@
-import React from 'react'
+
+import React, { useContext } from 'react'
+import { GlobalData } from '../AGlobalContext/GlobalContext';
+
 
 function FeaturedProducts() {
+
+    const { FeaturedProducts } = useContext(GlobalData)
+
+    console.log("state joiye", FeaturedProducts);
+
     return (
         <div className="mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-4">
-            {Array.from({ length: 4 }).map((_, i) => (
+            {FeaturedProducts.map((item, i) => (
                 <div key={i} className="rounded-md border">
                     <img
-                        src="https://images.unsplash.com/photo-1588099768523-f4e6a5679d88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHwxMTM4MTU1NXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+                        src={item.image}
                         alt="Laptop"
                         className="aspect-[16/9] w-full rounded-md md:aspect-auto md:h-[300px] lg:h-[200px]"
                     />

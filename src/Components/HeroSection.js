@@ -7,6 +7,7 @@ function HeroSection() {
 
     const { myName } = useContext(GlobalData)
 
+
     return (
         <div className="relative w-full bg-white">
             <div className="mx-auto max-w-7xl items-center lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">

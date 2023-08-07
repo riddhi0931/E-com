@@ -3,22 +3,57 @@
 // use karvu useContext hook na help thi
 
 // Context create karvu
-import { createContext } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import reducer from './Reducer/ProductReducer'
 
 const GlobalData = createContext()
+
+const API = "https://api.pujakaitem.com/api/products"
+
+// initialState matlab starting ma su display thase
+const initialState = {
+    products: [],
+    featureProducts: [],
+    isLoading: false
+}
 
 // Provider banavu and app ne provider na ander nakhvu
 const GlobalProvider = ({ children }) => {
 
-    function apiCall() {
-        const response = fetch("https://api.pujakaitem.com/api/products")
-        const format = response.json()
-        console.log(format);
-    }
+    const [state, dispatch] = useReducer(reducer, initialState)
 
-    return <GlobalData.Provider value={{ myName: "meeru" }}>
-        {children}
-    </GlobalData.Provider>
+    // Jya sudhi Data fetch thai ne na avi jay tya sudhi hu user ne loading batavis
+
+
+    // API Fetching Function
+
+
+    const apiCall = async (url) => {
+        dispatch({ type: "LOADING_ON" })
+        try {
+            const response = await fetch(url)
+            const product = await response.json()
+            dispatch({ type: "API_DATA", payload: product })
+            console.log("product", product);
+        }
+        catch (error) {
+            alert('Error', error)
+        }
+
+    }
+    // API Calling in useEffect
+    useEffect(() => {
+        console.log("apicall", apiCall());
+        apiCall(API)
+    }, [])
+
+    // Have data aavi gayu che LOADING on che to off kari do and data dekhai jase
+
+    return (
+        <GlobalData.Provider value={{ ...state }}>
+            {children}
+        </GlobalData.Provider >
+    )
 
 }
 
