@@ -1,6 +1,4 @@
-const reducer = (state, action) => {
-    isLoading: true
-
+const Productreducer = (state, action) => {
 
     switch (action.type) {
         // Loading chalu che because data aava ma var lagi sake che 
@@ -33,4 +31,4 @@ const reducer = (state, action) => {
 
 
 
-export default reducer
+export default Productreducer
