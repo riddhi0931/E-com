@@ -17,8 +17,21 @@ const reducer = (state, action) => {
       return {
         ...state,
         isLoading: false,
-        products: [action.payload],
+        products: action.payload,
         featureProducts: topSelling,
+      };
+
+    case "SP_LOADING":
+      return {
+        ...state,
+        isSingleLoading: true,
+      };
+
+    case "SP_DATA":
+      return {
+        ...state,
+        isSingleLoading: false,
+        singleProduct: action.payload
       };
 
     default:

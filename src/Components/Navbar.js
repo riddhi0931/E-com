@@ -7,7 +7,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="flex justify-between py-5 px-10 bg-blend-color-burn w-[1280px] m-auto text-black  ">
+        <div className="flex justify-between py-5 px-10 bg-blend-color-burn w-[1280px] m-auto text-black  font-serif">
 
             {/* Logo */}
             <div>

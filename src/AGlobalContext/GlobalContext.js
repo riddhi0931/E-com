@@ -16,6 +16,8 @@ const initialState = {
   products: [],
   featureProducts: [],
   isLoading: false,
+  singleProduct: {},
+  isSingleLoading: false
 };
 
 // Provider banavu and app ne provider na ander nakhvu
@@ -29,14 +31,29 @@ const GlobalProvider = ({ children }) => {
   const apiCall = async (url) => {
     dispatch({ type: "LOADING_ON" });
     try {
-      const response = await axios(url);
+      const response = await axios.get(url);
       const product = await response.data;
       dispatch({ type: "API_DATA", payload: product });
-      console.log("product", product);
     } catch (error) {
-      throw error;
+      console.log(error);
     }
   };
+
+  // Single Products
+
+  const getSP = async (url) => {
+    dispatch({ type: "SP_LOADING" });
+    try {
+      const response = await axios.get(url);
+      const SP = await response.data;
+      dispatch({ type: "SP_DATA", payload: SP });
+    } catch (error) {
+    }
+  };
+
+
+
+
   // API Calling in useEffect
   useEffect(() => {
     apiCall(API);
@@ -45,7 +62,7 @@ const GlobalProvider = ({ children }) => {
   // Have data aavi gayu che LOADING on che to off kari do and data dekhai jase
 
   return (
-    <GlobalData.Provider value={{ ...state }}>{children}</GlobalData.Provider>
+    <GlobalData.Provider value={{ ...state, getSP }}>{children}</GlobalData.Provider>
   );
 };
 
