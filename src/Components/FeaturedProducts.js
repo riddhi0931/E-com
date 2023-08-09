@@ -2,7 +2,7 @@
 import React, { useContext } from 'react'
 import { GlobalData } from '../AGlobalContext/GlobalContext';
 import Products from './Products';
-import { NavLink } from 'react-router-dom';
+
 
 
 function FeaturedProducts() {
@@ -20,9 +20,7 @@ function FeaturedProducts() {
                     {
                         featureProducts.map((item) => (
                             <>
-                                <NavLink to={`/singleProduct/${item.id}`}>
-                                    <Products key={item.id} item={item} />
-                                </NavLink>
+                                <Products key={item.id} item={item} />
                             </>
 
                         ))

@@ -19,7 +19,6 @@ const SingleProduct = () => {
     const { id } = useParams()
 
     const {
-        id: Riddhi,
         name,
         image,
         stars,
@@ -39,15 +38,15 @@ const SingleProduct = () => {
         <>
             <PageNavigation title={name} />
             <div>
-                <div className='flex  gap-60 w-[900px] m-auto mt-10 mr-36 '>
+                <div className='flex justify-around mt-10 '>
 
                     {/* Product Image */}
                     <div className=''>
-                        <MyImage imgs={image} />
+                        <MyImage photo={image} />
                     </div>
 
                     {/* Product data */}
-                    <div className=' font-semibold '>
+                    <div className=' font-semibold w-[500px]'>
                         <h1>{name}</h1>
 
                         <p>{stars}</p>

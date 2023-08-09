@@ -1,24 +1,30 @@
 import React from 'react'
 
-const MyImage = ({ imgs }) => {
+
+
+const MyImage = ({ photo }) => {
+    console.log("photo", photo);
     return (
-        <div className='grid grid-4-col'>
+        <div className='grid grid-rows-4 gap-4 '>
             {
-                imgs.map((element, index) => {
+                photo?.map((Element, index) => {
                     return (
-                        <figure>
-                            <img src={element.url}
-                                alt={element.filename}
-                                className='box'
+                        <>
+                            <img
+                                src={Element.url}
+                                alt={Element.filename}
                                 key={index}
+                                className='h-[100px] w-[150px]'
                             />
-                        </figure>
+                        </>
                     )
+
                 })
-
             }
-
         </div>
+
+
+
     )
 }
 
