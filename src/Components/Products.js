@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const Products = ({ item }) => {
     return (
         <>
-            <div className='flex flex-col gap-4 border border-black'>
+            <div className='flex flex-col gap-4'>
                 <NavLink to={`/singleProduct/${item.id}`}>
                     <div>
                         <img src={item.image} alt="img" className='h-[200px]' />

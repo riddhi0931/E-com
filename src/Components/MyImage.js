@@ -1,54 +1,36 @@
 import React, { useState } from 'react'
 
-
-
-const MyImage = ({ photo = [{ url: "" }] }) => {
-
-    console.log("photo", photo);
-
-    const [mainImage, setMainImage] = useState(photo[0])
+const MyImage = ({ imgs = [{ url: "" }] }) => {
+    const [mainImage, setMainImage] = useState(imgs[0])
 
     return (
-        <>
-
-            <div className='flex gap-3 items-center'>
-
-                <div className='grid grid-rows-4 gap-4 '>
-                    {
-                        photo?.map((Element, index) => {
-                            return (
-                                <>
-                                    <img
-                                        src={Element.url}
-                                        alt={Element.filename}
-                                        key={index}
-                                        className='h-[100px] w-[150px]'
-                                        onClick={() => setMainImage(Element)}
-                                    />
-                                </>
-                            )
-
-                        })
-                    }
-                </div>
-
-                {/* 2 nd Photo */}
-                <div className=' w-[400px] h-[300px]'>
-                    <img src={mainImage.url} alt={photo[0].filename} />
-                </div>
-
+        <div className='flex gap-3 items-center'>
+            <div className='grid grid-rows-4 gap-4'>
+                {
+                    imgs.map((curElm, index) => {
+                        return (
+                            <figure>
+                                <img srcSet={curElm.url}
+                                    alt={curElm.filename}
+                                    key={index}
+                                    className='h-[100px] w-[150px]'
+                                    onClick={() => setMainImage(curElm)}
+                                />
+                            </figure>
+                        )
+                    })}
             </div>
 
-
-
-        </>
-
-
-
-
-
-
+            {/* Main Image */}
+            <div className='h-[200px] w-[250px]'>
+                {/* <img src={imgs[0].url} alt={imgs[0].filename} /> */}
+                <img srcSet={mainImage.url} alt={mainImage.filename} />
+            </div>
+        </div>
     )
 }
 
 export default MyImage
+
+// 9:30 thi issue che
+

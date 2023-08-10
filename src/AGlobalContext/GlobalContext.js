@@ -48,6 +48,7 @@ const GlobalProvider = ({ children }) => {
       const SP = await response.data;
       dispatch({ type: "SP_DATA", payload: SP });
     } catch (error) {
+      throw error
     }
   };
 

@@ -8,11 +8,9 @@ const AllProducts = () => {
 
     return (
         <>
-            <h1>Hello</h1>
-
             <div className='w-[1280px] m-auto'>
                 <h1 className='text-3xl font-bold mt-20 my-10'>All Products</h1>
-                <div className=' flex flex-rows gap-4 border border-black w-[1000px]'>
+                <div className=' grid grid-cols-3 gap-6 '>
                     {
                         allproducts.map((item) => (
                             <Products key={item.id} item={item} />

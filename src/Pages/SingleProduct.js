@@ -42,12 +42,12 @@ const SingleProduct = () => {
 
                     {/* Product Image */}
                     <div className=''>
-                        <MyImage photo={image} />
+                        <MyImage imgs={image} />
                     </div>
 
                     {/* Product data */}
                     <div className=' font-semibold w-[500px]'>
-                        <h1>{name}</h1>
+                        <h1 className="font-semibold text-3xl">{name}</h1>
 
                         <p>{stars}</p>
 
@@ -62,7 +62,7 @@ const SingleProduct = () => {
 
                         <p>{description}</p>
 
-                        <div className='grid grid-cols-4 mt-6'>
+                        <div className='grid grid-cols-4 mt-6 gap-4'>
                             <div>
                                 <TbTruckDelivery className=' ' />
                                 <p>Free Delivery</p>
