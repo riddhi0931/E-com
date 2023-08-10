@@ -35,6 +35,7 @@ const SingleProduct = () => {
 
           {/* Product data */}
           <div className=" font-semibold w-[500px]">
+            <h2>Hey</h2>
             <h1>{name}</h1>
 
             <p>{stars}</p>
@@ -51,7 +52,6 @@ const SingleProduct = () => {
             <p>{description}</p>
 
             <div className="grid grid-cols-4 mt-6">
-              <h1>Hello</h1>
               <div>
                 <TbTruckDelivery className=" " />
                 <p> Delivery</p>

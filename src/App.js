@@ -4,8 +4,6 @@ import Home from "./Pages/Home";
 import SingleProduct from "./Pages/SingleProduct";
 import AllProducts from "./Pages/AllProducts";
 
-
-
 const App = () => {
   return (
     <>
