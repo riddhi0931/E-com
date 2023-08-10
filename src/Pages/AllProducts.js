@@ -8,6 +8,7 @@ const AllProducts = () => {
 
     return (
         <>
+            <h1>Hello</h1>
 
             <div className='w-[1280px] m-auto'>
                 <h1 className='text-3xl font-bold mt-20 my-10'>All Products</h1>
