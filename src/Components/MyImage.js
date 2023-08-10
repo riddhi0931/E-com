@@ -31,6 +31,5 @@ const MyImage = ({ imgs = [{ url: "" }] }) => {
 }
 
 export default MyImage
-
-// 9:30 thi issue che
+// 7 to 9 10 to 12 4 to 7 8 to 9 10 to 11
 
