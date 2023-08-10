@@ -11,7 +11,7 @@ import { VscWorkspaceTrusted } from "react-icons/vsc";
 const APIData = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
-  const { getSP, isSingleLoading, singleProduct } = useContext(GlobalData);
+  const { getSP, singleProduct } = useContext(GlobalData);
   console.log("singleProduct", singleProduct);
 
   const { id } = useParams();
@@ -54,7 +54,7 @@ const SingleProduct = () => {
               <h1>Hello</h1>
               <div>
                 <TbTruckDelivery className=" " />
-                <p>Free Delivery</p>
+                <p> Delivery</p>
               </div>
 
               <div>
