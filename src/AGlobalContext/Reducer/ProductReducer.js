@@ -17,7 +17,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         isLoading: false,
-        products: action.payload,
+        allproducts: action.payload,
         featureProducts: topSelling,
       };
 

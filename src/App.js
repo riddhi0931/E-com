@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
-import SingleProduct from "./Components/SingleProduct";
+import SingleProduct from "./Pages/SingleProduct";
+import AllProducts from "./Pages/AllProducts";
 
 
 
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/singleProduct/:id" element={<SingleProduct />} />
+        <Route path="/allproducts" element={<AllProducts />} />
       </Routes>
     </>
   );

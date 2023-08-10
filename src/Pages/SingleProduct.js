@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from 'react'
 import { useParams } from "react-router-dom"
 import { GlobalData } from '../AGlobalContext/GlobalContext'
-import PageNavigation from './PageNavigation'
-import MyImage from './MyImage'
+import PageNavigation from '../Components/PageNavigation'
+import MyImage from '../Components/MyImage'
 import { TbTruckDelivery } from "react-icons/tb";
 import { TbReplaceFilled } from "react-icons/tb";
 import { MdDeliveryDining } from "react-icons/md";
@@ -38,7 +38,7 @@ const SingleProduct = () => {
         <>
             <PageNavigation title={name} />
             <div>
-                <div className='flex justify-around mt-10 '>
+                <div className='flex w-[1280px] m-auto justify-around mt-10 '>
 
                     {/* Product Image */}
                     <div className=''>

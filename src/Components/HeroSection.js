@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalData } from "../AGlobalContext/GlobalContext";
+import { NavLink } from "react-router-dom";
 
 function HeroSection() {
   const { myName } = useContext(GlobalData);
@@ -18,9 +19,11 @@ function HeroSection() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
             modi blanditiis dolores quasi eaque explicabo!
           </p>
-          <button className="py-3 px-4 text-2xl bg-black text-white rounded w-40 mt-6">
-            Shop now
-          </button>
+          <NavLink to='/allProducts'>
+            <button className="py-3 px-4 text-2xl bg-black text-white rounded w-40 mt-6">
+              Shop now
+            </button>
+          </NavLink>
         </div>
         <div className="relative lg:col-span-5 lg:-mr-8 xl:col-span-6">
           <img
