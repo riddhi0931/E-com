@@ -44,13 +44,14 @@ const SingleProduct = () => {
             <p>
               MRP:{price}
               {/* <del>
-                                <FormatPrice price={price + 250000} />
- </del> */}
+                <FormatPrice price={price + 250000} />
+              </del> */}
             </p>
 
             <p>{description}</p>
 
             <div className="grid grid-cols-4 mt-6">
+              <h1>Hello</h1>
               <div>
                 <TbTruckDelivery className=" " />
                 <p>Free Delivery</p>
@@ -63,7 +64,7 @@ const SingleProduct = () => {
 
               <div>
                 <MdDeliveryDining />
-                <p>Riddhi Delivered</p>
+                <p>RJ Delivered</p>
               </div>
 
               <div>
