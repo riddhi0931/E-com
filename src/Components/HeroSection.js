@@ -19,7 +19,7 @@ function HeroSection() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
             modi blanditiis dolores quasi eaque explicabo!
           </p>
-          <NavLink to='/allProducts'>
+          <NavLink to="/allProducts">
             <button className="py-3 px-4 text-2xl bg-black text-white rounded w-40 mt-6">
               Shop now
             </button>
