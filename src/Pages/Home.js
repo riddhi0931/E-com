@@ -1,24 +1,23 @@
 import React from "react";
 import HeroSection from "../Components/HeroSection";
 import FeaturedProducts from "../Components/FeaturedProducts";
-
+import Footer from "../Components/Footer";
 
 const Home = () => {
-    return (
-        <>
+  return (
+    <>
+      {/* Hero Section */}
+      <HeroSection />
 
-            {/* Hero Section */}
-            <HeroSection />
+      {/* Feature Products */}
+      <FeaturedProducts />
 
-            {/* Feature Products */}
-            <FeaturedProducts />
+      {/* Services */}
 
-            {/* Services */}
-
-            {/* Footer */}
-
-        </>
-    );
+      {/* Footer */}
+      <Footer />
+    </>
+  );
 };
 
 export default Home;
