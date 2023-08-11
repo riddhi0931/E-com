@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { GlobalData } from "../AGlobalContext/GlobalContext";
+import { GlobalData } from "../AGlobalContext/GlobalProducts/GlobalContext";
 import { NavLink } from "react-router-dom";
 
 function HeroSection() {

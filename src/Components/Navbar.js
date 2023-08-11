@@ -26,6 +26,9 @@ const Navbar = () => {
           <NavLink to="AboutUs">
             <li>About</li>
           </NavLink>
+          <NavLink to="ContactUs">
+            <li>Conatct Us</li>
+          </NavLink>
 
           <div className="flex justify-center w-16 h-10 rounded-lg">
             <NavLink to="/Cart">

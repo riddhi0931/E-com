@@ -5,7 +5,7 @@ import SingleProduct from "./Pages/SingleProduct";
 import AllProducts from "./Pages/AllProducts";
 import Cart from "./Pages/Cart";
 import AboutUs from "./Pages/AboutUs";
-import Contact from "./Pages/Contact";
+import ContactUs from "./Pages/ContactUs";
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/allproducts" element={<AllProducts />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/ContactUs" element={<ContactUs />} />
       </Routes>
     </>
   );

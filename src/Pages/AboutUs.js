@@ -1,22 +1,7 @@
 "use client";
 
 import React from "react";
-import { Menu, X, MapPin } from "lucide-react";
-
-const menuItems = [
-  {
-    name: "Home",
-    href: "#",
-  },
-  {
-    name: "About",
-    href: "#",
-  },
-  {
-    name: "Contact",
-    href: "#",
-  },
-];
+import { MapPin } from "lucide-react";
 
 const locations = [
   {

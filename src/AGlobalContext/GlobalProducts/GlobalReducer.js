@@ -1,4 +1,3 @@
-
 const reducer = (state, action) => {
   switch (action.type) {
     // Loading chalu che because data aava ma var lagi sake che
@@ -31,7 +30,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         isSingleLoading: false,
-        singleProduct: action.payload
+        singleProduct: action.payload,
       };
 
     default:
@@ -40,4 +39,3 @@ const reducer = (state, action) => {
 };
 
 export default reducer;
-

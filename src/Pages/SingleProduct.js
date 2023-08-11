@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { GlobalData } from "../AGlobalContext/GlobalContext";
+import { GlobalData } from "../AGlobalContext/GlobalProducts/GlobalContext";
 import PageNavigation from "../Components/PageNavigation";
 import MyImage from "../Components/MyImage";
 import { TbTruckDelivery } from "react-icons/tb";
