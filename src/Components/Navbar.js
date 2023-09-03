@@ -4,39 +4,33 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between py-5 px-10 bg-blend-color-burn w-[1280px] m-auto text-black  font-serif">
+    <div className="flex justify-between py-5 px-10 bg-blend-color-burn w-[1280px] m-auto  items-center text-lg">
       {/* Logo */}
-      <div>
-        <NavLink to="/">
-          <img src="./Images/Logo.png " alt="rj Photo" height={80} width={90} />
-        </NavLink>
-      </div>
-
-      {/* Heading */}
-      <div>
-        <h1 className="text-5xl font-bold ">RJ Fashion Hub</h1>
+      <div className=" text-3xl">
+        <NavLink to="/">E-com</NavLink>
       </div>
 
       {/* nav list */}
-      <div className="flex ">
-        <ul className="flex gap-6 text-2xl cursor-pointer ">
+      <div className="flex">
+        <ul className="flex gap-6 cursor-pointer items-center">
+          <NavLink to="AllProducts">
+            <li className="hover:font-bold">Products</li>
+          </NavLink>
           <NavLink to="/">
-            <li>Home</li>
+            <li className="hover:font-bold">Home</li>
           </NavLink>
           <NavLink to="AboutUs">
-            <li>About</li>
+            <li className="hover:font-bold">About</li>
           </NavLink>
           <NavLink to="ContactUs">
-            <li>Conatct Us</li>
+            <li className="hover:font-bold">Conatct Us</li>
           </NavLink>
 
-          <div className="flex justify-center w-16 h-10 rounded-lg">
-            <NavLink to="/Cart">
-              <div className="relative">
-                <FiShoppingCart className="mt-2 " />
-              </div>
-            </NavLink>
-          </div>
+          <NavLink to="/Cart">
+            <div className="">
+              <FiShoppingCart className="hover:font-bold" />
+            </div>
+          </NavLink>
         </ul>
       </div>
     </div>

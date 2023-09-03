@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { GlobalData } from "../AGlobalContext/GlobalProducts/GlobalContext";
 import PageNavigation from "../Components/PageNavigation";
 import MyImage from "../Components/MyImage";
@@ -7,12 +7,16 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { TbReplaceFilled } from "react-icons/tb";
 import { MdDeliveryDining } from "react-icons/md";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
+import AddToCart from "../Components/AddToCart";
+import { CartContext } from "../AGlobalContext/Cart/CartContext";
 
 const APIData = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
-  const { getSP, isSingleLoading, singleProduct } = useContext(GlobalData);
+  const { getSP, singleProduct } = useContext(GlobalData);
   console.log("singleProduct", singleProduct);
+
+  const { cart } = useContext(CartContext);
 
   const { id } = useParams();
 
@@ -67,7 +71,7 @@ const SingleProduct = () => {
               </div>
             </div>
 
-            <div className=" flex-row gap-4 mt-6">
+            <div className=" flex-row gap-4 ">
               <p>
                 Available:
                 <span>{stock > 0 ? "In Stock" : "Not Available"}</span>
@@ -84,6 +88,17 @@ const SingleProduct = () => {
 
             <div>
               <hr className=" h-1 w-auto bg-slate-400 mt-2" />
+            </div>
+            <div>
+              {singleProduct.id !== cart.id ? (
+                <AddToCart product={singleProduct} />
+              ) : (
+                <div>
+                  <NavLink to="/cart">
+                    <button>Go To Cart</button>
+                  </NavLink>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalData } from "../AGlobalContext/GlobalProducts/GlobalContext";
 import { NavLink } from "react-router-dom";
+import "./Button.css";
 
 function HeroSection() {
   const { myName } = useContext(GlobalData);
@@ -20,7 +21,7 @@ function HeroSection() {
             modi blanditiis dolores quasi eaque explicabo!
           </p>
           <NavLink to="/allProducts">
-            <button className="py-3 px-4 text-2xl bg-black text-white rounded w-40 mt-6">
+            <button className=" btn btn1 btn2 py-3 px-4 text-2xl bg-black text-white rounded w-40 mt-6">
               Shop now
             </button>
           </NavLink>

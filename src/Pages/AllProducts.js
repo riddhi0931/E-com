@@ -1,24 +1,37 @@
 import React, { useContext } from "react";
-import { GlobalData } from "../AGlobalContext/GlobalProducts/GlobalContext";
-import Products from "../Components/Products";
 import Filter from "../Components/Filter";
+import { FilterContext } from "../AGlobalContext/FilterData/FilterContext";
+import ListView from "../Components/ListView";
+import GridView from "../Components/GridView";
+import Sorting from "../Components/Sorting";
 
 const AllProducts = () => {
-  const { allproducts } = useContext(GlobalData);
+  const { filter_products, gridView } = useContext(FilterContext);
+
+  console.log("filter_productsssss", filter_products);
 
   return (
     <>
-      <div className="w-[1280px] m-auto ">
-        <h1 className="text-3xl font-bold mt-20 my-10">All Products</h1>
+      <div className="w-[1080px] m-auto">
+        <h1 className="text-3xl font-bold mt-6 my-10">All Products</h1>
 
-        <div className="flex">
+        <div className="flex flex-row gap-10">
           {/* Filters */}
-          <Filter />
+          <div className=" basis-1/4">
+            <Filter />
+          </div>
+
           {/* All Products */}
-          <div className=" grid grid-cols-3 gap-4 border border-black w-[1000px]">
-            {allproducts.map((item) => (
-              <Products key={item.id} item={item} />
-            ))}
+          <div className=" basis-full">
+            {/* Sorting */}
+            <div>
+              <Sorting />
+            </div>
+            {gridView ? (
+              <GridView products={filter_products} />
+            ) : (
+              <ListView products={filter_products} />
+            )}
           </div>
         </div>
       </div>

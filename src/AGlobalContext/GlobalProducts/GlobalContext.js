@@ -13,7 +13,7 @@ const API = "https://api.pujakaitem.com/api/products";
 
 // initialState matlab starting ma su display thase
 const initialState = {
-  allproducts: [],
+  products: [],
   featureProducts: [],
   isLoading: false,
   singleProduct: {},

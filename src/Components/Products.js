@@ -1,20 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Products = ({ item }) => {
+const Products = (items) => {
+  const { id, name, image, price } = items;
+
+  console.log("Items", items);
+
   return (
     <>
-      <div className="flex flex-col gap-4 ">
-        <NavLink to={`/singleProduct/${item.id}`}>
-          <div>
-            <img src={item.image} alt="img" className="h-[200px]" />
-          </div>
-        </NavLink>
-        <div className="flex flex-col text-center justify-center gap-4">
-          <h1 className="text-2xl font-semibold">{item.name}</h1>
-          <button className="bg-black hover:bg-gray-800 text-white rounded px-4 py-2 ">
-            Add to Cart
-          </button>
+      <div className="flex w-[250px] h-[220px] gap-2 flex-col bg-white border-green-800 justify-center items-center hover:scale-110 shadow-black hover:ease-in-out duration-300 ">
+        <div>
+          <NavLink to={`/singleProduct/${id}`}>
+            <img src={image} alt="img" className="h-[170px] w-[220px]" />
+          </NavLink>
+        </div>
+        <div className="flex w-full justify-around font-semibold">
+          <p>{name}</p>
+          <p>Rs. {price}</p>
         </div>
       </div>
     </>

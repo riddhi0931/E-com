@@ -13,11 +13,9 @@ function FeaturedProducts() {
         <h1 className=" text-3xl font-bold mt-20">Top Selling Products</h1>
 
         <div className="flex justify-between mt-14">
-          {featureProducts.map((item, i) => (
-            <>
-              <Products key={i} item={item} />
-            </>
-          ))}
+          {featureProducts?.map((items) => {
+            return <Products key={items.id} {...items} />;
+          })}
         </div>
       </div>
     </>
